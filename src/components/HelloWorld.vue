@@ -20,7 +20,7 @@ export default {
   },
   created () {
     window.storyblok.init({
-      accessToken: 'akYA0RB4BzCPUoRfjIvUdQtt'
+      accessToken: 'b1Ucl4d8aQHRFtab6aczTgtt'
     })
     window.storyblok.on('change', () => {
       this.getStory('draft')
@@ -33,10 +33,19 @@ export default {
       }
     })
   },
+  watch: {
+    '$route': function () {
+      if (window.storyblok.isInEditor()) {
+        this.getStory('draft')
+      } else {
+        this.getStory('published')
+      }
+    }
+  },
   methods: {
     getStory (version) {
       window.storyblok.get({
-        slug: 'home',
+        slug: this.$route.params.slug,
         version: version
       }, (data) => {
         this.story = {
