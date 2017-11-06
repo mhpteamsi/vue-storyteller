@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
     <component :blok="story.content" :is="story.content.component"></component>
   </div>
 </template>
@@ -10,7 +9,6 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
       story: {
         content: {
           body: []
