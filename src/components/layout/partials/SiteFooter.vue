@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row no-gutters">
         <div class="col-md-6 d-flex">
-          <span class="w-100 text-uppercase text-center text-md-left">{{blok.copyright}}</span>
+          <span class="w-100 text-uppercase text-center text-md-left">© 2017 Company Name Here. All Rights Reserved.</span>
         </div>
         <div class="col-md-6 d-flex">
           <span class="w-100 text-uppercase text-center text-md-right">

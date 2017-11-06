@@ -5,19 +5,23 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import StoryblokVue from 'storyblok-vue'
-import Root from '@/components/Root'
-import Navbar from '@/components/Navbar'
+import LayoutHome from '@/components/layout/LayoutHome'
+import LayoutDefault from '@/components/layout/LayoutDefault'
+import LayoutBlank from '@/components/layout/LayoutBlank'
+import Navbar from '@/components/layout/partials/Navbar'
+import SiteFooter from '@/components/layout/partials/SiteFooter'
 import Teaser from '@/components/Teaser'
-import SiteFooter from '@/components/SiteFooter'
 
 Vue.config.productionTip = false
 
 Vue.use(StoryblokVue)
 
-Vue.component('root', Root)
+Vue.component('layout-home', LayoutHome)
+Vue.component('layout-default', LayoutDefault)
+Vue.component('layout-blank', LayoutBlank)
 Vue.component('navbar', Navbar)
 Vue.component('teaser', Teaser)
-Vue.component('site_footer', SiteFooter)
+Vue.component('site-footer', SiteFooter)
 
 /* eslint-disable no-new */
 new Vue({
