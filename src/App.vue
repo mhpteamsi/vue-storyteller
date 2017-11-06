@@ -11,13 +11,19 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+
+  // add variables here to customize Bootstrap
+  $headings-font-weight:        400;
+
+  $theme-colors: (
+    primary: #42b983
+  );
+
+  @import "~bootstrap/scss/bootstrap";
+
+  #app {
+    margin-top: 60px;
+    text-align: center;
+  }
 </style>
