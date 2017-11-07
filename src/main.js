@@ -11,6 +11,7 @@ import LayoutBlank from '@/components/layout/LayoutBlank'
 import Navbar from '@/components/layout/partials/Navbar'
 import SiteFooter from '@/components/layout/partials/SiteFooter'
 import Teaser from '@/components/Teaser'
+import Hero from '@/components/Hero'
 
 Vue.config.productionTip = false
 
@@ -20,8 +21,9 @@ Vue.component('layout-home', LayoutHome)
 Vue.component('layout-default', LayoutDefault)
 Vue.component('layout-blank', LayoutBlank)
 Vue.component('navbar', Navbar)
-Vue.component('teaser', Teaser)
 Vue.component('site-footer', SiteFooter)
+Vue.component('teaser', Teaser)
+Vue.component('hero', Hero)
 
 /* eslint-disable no-new */
 new Vue({
