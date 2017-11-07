@@ -13,8 +13,8 @@ export default {
 <style lang="scss">
 
   // add variables here to customize Bootstrap
+  $enable-rounded:              false;
   $headings-font-weight:        400;
-
   $theme-colors: (
     primary: #42b983
   );

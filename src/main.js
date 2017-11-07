@@ -12,6 +12,8 @@ import Navbar from '@/components/layout/partials/Navbar'
 import SiteFooter from '@/components/layout/partials/SiteFooter'
 import Teaser from '@/components/Teaser'
 import Hero from '@/components/Hero'
+import CallToActionsDeck from '@/components/CallToActionsDeck'
+import CallToActionItem from '@/components/CallToActionItem'
 
 Vue.config.productionTip = false
 
@@ -24,6 +26,8 @@ Vue.component('navbar', Navbar)
 Vue.component('site-footer', SiteFooter)
 Vue.component('teaser', Teaser)
 Vue.component('hero', Hero)
+Vue.component('call-to-actions-deck', CallToActionsDeck)
+Vue.component('call-to-action-item', CallToActionItem)
 
 /* eslint-disable no-new */
 new Vue({
