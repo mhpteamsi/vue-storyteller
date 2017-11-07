@@ -12,7 +12,7 @@ export default new Router({
     },
     {
       path: '/:slug',
-      name: 'Hello',
+      name: 'Index',
       component: Index
     }
   ]
