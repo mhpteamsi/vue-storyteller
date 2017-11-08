@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="jumbotron jumbotron-fluid p-0 text-white" :style="{ 'background-image': `url(${resizeImage(blok.image, '1600x0')})` }">
+  <div v-editable="blok" class="jumbotron jumbotron-fluid p-0 text-white" :style="{ 'background-image': `url(${resizeImage(blok.image, '1600x500')})` }">
     <!-- d-flex and my-auto used for vertical centering -->
     <div class="jumbotron-overlay d-flex py-5">
       <div class="container my-auto">
@@ -24,7 +24,7 @@
     background-position: center;
   }
   .jumbotron-overlay {
-    min-height: 400px;
+    min-height: 500px;
     background-color: rgba(0,0,0,.3);
   }
 </style>

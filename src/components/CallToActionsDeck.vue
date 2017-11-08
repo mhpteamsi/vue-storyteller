@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container pt-4">
     <div class="card-deck">
       <template v-for="item in blok.items">
         <component :blok="item" :is="item.component" :key="item.id"></component>
