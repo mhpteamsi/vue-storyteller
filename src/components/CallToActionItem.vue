@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok" class="card mb-5 border-0">
-    <img class="card-img-top" :src="blok.image" alt="Card image cap">
+    <img class="card-img-top" :src="resizeImage(blok.image, '350x0')" alt="Card image cap">
     <div class="card-body px-0">
       <h4 class="card-title">{{blok.title}}</h4>
       <p class="card-text">{{blok.text}}</p>
@@ -12,7 +12,9 @@
 </template>
 
 <script>
+  import utility from '@/mixins/utility'
   export default {
-    props: ['blok']
+    props: ['blok'],
+    mixins: [ utility ]
   }
 </script>
