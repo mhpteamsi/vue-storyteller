@@ -10,6 +10,10 @@ import LayoutDefault from '@/components/layout/LayoutDefault'
 import LayoutBlank from '@/components/layout/LayoutBlank'
 import Navbar from '@/components/layout/partials/Navbar'
 import SiteFooter from '@/components/layout/partials/SiteFooter'
+import Row from '@/components/layout/grid/Row'
+import Column from '@/components/layout/grid/Column'
+import Markdown from '@/components/Markdown'
+import ImageBlock from '@/components/ImageBlock'
 import Teaser from '@/components/Teaser'
 import Hero from '@/components/Hero'
 import CallToActionsDeck from '@/components/CallToActionsDeck'
@@ -22,6 +26,10 @@ Vue.use(StoryblokVue)
 Vue.component('layout-home', LayoutHome)
 Vue.component('layout-default', LayoutDefault)
 Vue.component('layout-blank', LayoutBlank)
+Vue.component('grid-row', Row)
+Vue.component('grid-column', Column)
+Vue.component('markdown', Markdown)
+Vue.component('image-block', ImageBlock)
 Vue.component('navbar', Navbar)
 Vue.component('site-footer', SiteFooter)
 Vue.component('teaser', Teaser)

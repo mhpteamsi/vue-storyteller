@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="jumbotron jumbotron-fluid p-0 text-white" :style="{ 'background-image': `url(${resizeImage(blok.image, '1600x500')})` }">
+  <div v-editable="blok" class="jumbotron jumbotron-fluid p-0 text-white" :style="{ 'background-image': `url(${ optimizedBackground })` }">
     <!-- d-flex and my-auto used for vertical centering -->
     <div class="jumbotron-overlay d-flex py-5">
       <div class="container my-auto">
@@ -11,10 +11,15 @@
 </template>
 
 <script>
-  import utility from '@/mixins/utility'
+  import Utility from '@/mixins/utility'
   export default {
     props: ['blok'],
-    mixins: [ utility ]
+    mixins: [ Utility ],
+    computed: {
+      optimizedBackground () {
+        return this.resizeImage(this.blok.image, '1600x500')
+      }
+    }
   }
 </script>
 
