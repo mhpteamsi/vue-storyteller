@@ -18,5 +18,6 @@
 <style lang="scss" scoped>
   img {
     max-width: 100%;
+    margin-bottom: 20px;
   }
 </style>
