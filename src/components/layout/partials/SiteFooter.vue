@@ -22,36 +22,3 @@
     props: ['blok']
   }
 </script>
-
-<style lang="scss">
-  // global sticky footer settings
-  html {
-    position: relative;
-    min-height: 100%;
-  }
-  body {
-    margin-bottom: 110px;
-  }
-</style>
-<style lang="scss" scoped>
-  // component sticky footer settings
-  .site-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    min-height: 110px;
-    font-size: 14px;
-  }
-
-  // TODO: figure out how to use Bootstrap mixins here without reimporting Bootstrap
-  @media (min-width: 768px) {
-    body {
-      margin-bottom: 80px;
-    }
-
-    .site-footer {
-      min-height: 80px;
-    }
-  }
-
-</style>
