@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="jumbotron jumbotron-fluid p-0 text-white" :style="{ 'background-image': `url(${ optimizedBackground })` }">
+  <div v-editable="blok" class="jumbotron jumbotron-fluid p-0 text-white" v-lazy:background-image="optimizedBackground">
     <!-- d-flex and my-auto used for vertical centering -->
     <div class="jumbotron-overlay d-flex py-5">
       <div class="container my-auto">

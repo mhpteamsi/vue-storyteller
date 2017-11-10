@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok" class="card mb-5 border-0">
-    <img class="card-img-top" :src="resizeImage(blok.image, '350x233')" alt="Card image cap">
+    <img class="card-img-top" v-lazy="resizeImage(blok.image, '350x233')" alt="Card image cap">
     <div class="card-body px-0">
       <h4 class="card-title">{{blok.title}}</h4>
       <p class="card-text">{{blok.text}}</p>

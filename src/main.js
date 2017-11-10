@@ -5,6 +5,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import StoryblokVue from 'storyblok-vue'
+import VueLazyload from 'vue-lazyload'
 import LayoutHome from '@/components/layout/LayoutHome'
 import LayoutDefault from '@/components/layout/LayoutDefault'
 import LayoutBlank from '@/components/layout/LayoutBlank'
@@ -22,6 +23,7 @@ import CallToActionItem from '@/components/CallToActionItem'
 Vue.config.productionTip = false
 
 Vue.use(StoryblokVue)
+Vue.use(VueLazyload)
 
 Vue.component('layout-home', LayoutHome)
 Vue.component('layout-default', LayoutDefault)
