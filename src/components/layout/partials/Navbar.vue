@@ -9,8 +9,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto bg-red">
-          <li class="nav-item" v-for="link in links" :key="link.id">
-            <router-link :to="link.slug" class="nav-link">{{link.name}}</router-link>
+          <li class="nav-item" v-for="story in stories" :key="story.id">
+            <router-link :to="story.slug" class="nav-link">{{story.name}}</router-link>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -28,20 +28,18 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      name: '',
-      links: []
+      stories: []
     }
   },
   mounted () {
-    // this will probably be a huge request once there's alot of pages, but it works for now
-    var reqUrl = 'https://api.storyblok.com/v1/cdn/links?token=KeYfBxUXGP0hQ7rVuWQuSwtt'
-
-    axios.get(reqUrl).then(response => {
-      var responseLinks = response.data.links
-
-      this.links = Object.keys(responseLinks).reduce((r, k) => {
-        return r.concat(responseLinks[k])
-      }, [])
+    var reqUrl = 'https://api.storyblok.com/v1/cdn/stories'
+    axios.get(reqUrl, {
+      params: {
+        token: 'b1Ucl4d8aQHRFtab6aczTgtt',
+        'filter_by[show_in_nav]': 1
+      }
+    }).then(response => {
+      this.stories = response.data.stories
     })
   }
 }
