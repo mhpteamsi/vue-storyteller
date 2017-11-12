@@ -36,6 +36,7 @@ export default {
     axios.get(reqUrl, {
       params: {
         token: 'b1Ucl4d8aQHRFtab6aczTgtt',
+        env: process.env.NODE_ENV,
         'filter_by[show_in_nav]': 1
       }
     }).then(response => {
