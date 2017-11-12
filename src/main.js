@@ -10,6 +10,8 @@ import LayoutHome from '@/components/layout/LayoutHome'
 import LayoutDefault from '@/components/layout/LayoutDefault'
 import LayoutBlank from '@/components/layout/LayoutBlank'
 import Navbar from '@/components/layout/partials/Navbar'
+import NavGroup from '@/components/layout/partials/NavGroup'
+import NavLink from '@/components/layout/partials/NavLink'
 import SiteFooter from '@/components/layout/partials/SiteFooter'
 import Row from '@/components/layout/grid/Row'
 import Column from '@/components/layout/grid/Column'
@@ -33,6 +35,8 @@ Vue.component('grid-column', Column)
 Vue.component('markdown', Markdown)
 Vue.component('image-block', ImageBlock)
 Vue.component('navbar', Navbar)
+Vue.component('nav-group', NavGroup)
+Vue.component('nav-link', NavLink)
 Vue.component('site-footer', SiteFooter)
 Vue.component('teaser', Teaser)
 Vue.component('hero', Hero)

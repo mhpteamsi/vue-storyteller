@@ -9,9 +9,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto bg-red">
-          <li class="nav-item" v-for="story in stories" :key="story.id">
-            <router-link :to="story.slug" class="nav-link">{{story.name}}</router-link>
-          </li>
+          <component v-for="item in blok" :blok="item" :is="item.component" :key="item.id"></component>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -23,25 +21,7 @@
 </template>
 
 <script>
-// may need to change this to reference a root instance of axios
-import axios from 'axios'
 export default {
-  data () {
-    return {
-      stories: []
-    }
-  },
-  mounted () {
-    var reqUrl = 'https://api.storyblok.com/v1/cdn/stories'
-    axios.get(reqUrl, {
-      params: {
-        token: 'b1Ucl4d8aQHRFtab6aczTgtt',
-        env: process.env.NODE_ENV,
-        'filter_by[show_in_nav]': 1
-      }
-    }).then(response => {
-      this.stories = response.data.stories
-    })
-  }
+  props: ['blok']
 }
 </script>
