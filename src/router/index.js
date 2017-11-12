@@ -11,7 +11,7 @@ export default new Router({
       redirect: '/home'
     },
     {
-      path: '/:slug',
+      path: '/:slug*',
       name: 'Index',
       component: Index
     }
