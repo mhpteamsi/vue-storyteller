@@ -9,11 +9,10 @@
 </template>
 
 <script>
-// may need to change this to reference a root instance of axios
-import axios from 'axios'
-
+import Utility from '@/mixins/utility'
 export default {
   props: ['blok'],
+  mixins: [ Utility ],
   data () {
     return {
       settings: {}
@@ -21,15 +20,8 @@ export default {
   },
   mounted () {
     // get settings for navbar and footer
-    var reqUrl = 'https://api.storyblok.com/v1/cdn/stories/settings/global'
-    axios.get(reqUrl, {
-      params: {
-        token: 'b1Ucl4d8aQHRFtab6aczTgtt',
-        env: process.env.NODE_ENV,
-        v: '10'
-      }
-    }).then(response => {
-      this.settings = response.data.story.content
+    this.getGlobalSettings().then(settings => {
+      this.settings = settings
     })
   }
 }
