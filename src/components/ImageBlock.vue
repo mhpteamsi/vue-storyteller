@@ -1,5 +1,5 @@
 <template>
-  <img v-editable="blok" class="img-responsive" :class="blok.css_class" v-lazy="optimizedImage" :alt="blok.alt_text">
+  <img v-editable="blok" class="img-fluid" :class="blok.css_class" v-lazy="optimizedImage" :alt="blok.alt_text">
 </template>
 
 <script>
