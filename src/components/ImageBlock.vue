@@ -1,5 +1,5 @@
 <template>
-  <img v-editable="blok" :class="blok.css_class" v-lazy="optimizedImage" alt="blok.alt_text">
+  <img v-editable="blok" class="img-responsive" :class="blok.css_class" v-lazy="optimizedImage" :alt="blok.alt_text">
 </template>
 
 <script>
@@ -17,7 +17,6 @@
 
 <style lang="scss" scoped>
   img {
-    max-width: 100%;
     margin-bottom: 20px;
   }
 </style>
