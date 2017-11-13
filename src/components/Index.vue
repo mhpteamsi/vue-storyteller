@@ -53,6 +53,12 @@ export default {
         }
         this.$nextTick(() => {
           this.story = data.story
+
+          // set up SEO meta data.
+            // NOTE: you will probably need to use a prerenderer in order for search engines to pick this up.
+            // https://www.netlify.com/docs/prerendering/
+          document.title = data.story.content.seo_title ? data.story.content.seo_title : data.story.name
+          document.querySelector('meta[name="description"]').setAttribute('content', data.story.content.meta_description)
         })
       })
     }
