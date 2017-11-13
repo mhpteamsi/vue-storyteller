@@ -1,18 +1,31 @@
 <template>
   <div class="layout-default" v-editable="blok">
-    <navbar />
+    <navbar :blok="settings.header_nav" />
     <div class="content-wrapper container">
       <template v-for="item in blok.body">
         <component :blok="item" :is="item.component" :key="item.id"></component>
       </template>
     </div><!-- /.container -->
-    <site-footer />
+    <site-footer :blok="settings.footer_links" />
   </div>
 </template>
 
 <script>
+import Utility from '@/mixins/utility'
 export default {
-  props: ['blok']
+  props: ['blok'],
+  mixins: [ Utility ],
+  data () {
+    return {
+      settings: {}
+    }
+  },
+  mounted () {
+    // get settings for navbar and footer
+    this.getGlobalSettings().then(settings => {
+      this.settings = settings
+    })
+  }
 }
 </script>
 

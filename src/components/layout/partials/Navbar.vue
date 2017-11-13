@@ -8,13 +8,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <router-link to="/home" class="nav-link">Home <span class="sr-only">(current)</span></router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/about" class="nav-link">About</router-link>
-          </li>
+        <ul class="navbar-nav mr-auto bg-red">
+          <component v-for="item in blok" :blok="item" :is="item.component" :key="item.id"></component>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -24,3 +19,9 @@
     </div><!-- /.container -->
   </nav>
 </template>
+
+<script>
+export default {
+  props: ['blok']
+}
+</script>
