@@ -4,7 +4,7 @@
     <template v-for="item in blok.body">
       <component :blok="item" :is="item.component" :key="item.id"></component>
     </template>
-    <site-footer :blok="settings.footer_nav" />
+    <site-footer :blok="settings.footer_links" />
   </div>
 </template>
 

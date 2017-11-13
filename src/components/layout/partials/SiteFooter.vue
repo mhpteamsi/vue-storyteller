@@ -7,9 +7,7 @@
         </div>
         <div class="col-md-6 d-flex">
           <span class="w-100 text-uppercase text-center text-md-right">
-            <a href="#">Privacy Policy</a>
-            <span class="text-muted">/</span>
-            <a href="#">Contact Us</a>
+            <component v-for="(item, index) in blok" :blok="item" :index="index" :is="item.component" :key="item.id"></component>
           </span>
         </div>
       </div>
@@ -18,7 +16,7 @@
 </template>
 
 <script>
-  export default {
-    props: ['blok']
-  }
+export default {
+  props: ['blok']
+}
 </script>

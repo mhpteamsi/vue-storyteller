@@ -4,7 +4,7 @@ export default {
   data () {
     return {
       api_token: 'b1Ucl4d8aQHRFtab6aczTgtt',
-      api_version: '10'
+      api_version: '11'
     }
   },
   methods: {

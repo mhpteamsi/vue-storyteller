@@ -6,7 +6,7 @@
         <component :blok="item" :is="item.component" :key="item.id"></component>
       </template>
     </div><!-- /.container -->
-    <site-footer :blok="settings.footer_nav" />
+    <site-footer :blok="settings.footer_links" />
   </div>
 </template>
 
