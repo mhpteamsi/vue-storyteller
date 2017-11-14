@@ -14,6 +14,7 @@ Vue.js makes this possible by binding the data source to dynamic components such
 - Dynamic navigation, allowing the data store to implement a custom navbar - or even a mega menu.
 - Several reusable content blocks - grid row and columns, hero component, call-to-actions, markdown, and images.
 - Reusable page templates.
+- Automatic in-place image optimization on image components via StoryBlok's [Image Service](https://www.storyblok.com/docs/image-service) (just specify the width and/or height on each component instance)
 
 ## Build Setup
 
