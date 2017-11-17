@@ -6,6 +6,7 @@
 
 <script>
 import Utility from '@/mixins/utility'
+import Vue from 'vue'
 
 export default {
   name: 'Index',
@@ -51,7 +52,7 @@ export default {
       // get timestamp
       var timestampReqUrl = 'https://nl1rjqs0be.execute-api.us-east-1.amazonaws.com/prod/storybloks_api_request_version'
       return this.$http.get(timestampReqUrl).then(timestampResponse => {
-        this.$apiTimestamp = timestampResponse.data
+        Vue.prototype.$apiTimestamp = timestampResponse.data
         // use timestamp when requesting data from CDN
         var reqUrl = 'https://api.storyblok.com/v1/cdn/stories/' + this.$route.params.slug
         return this.$http.get(reqUrl, {
