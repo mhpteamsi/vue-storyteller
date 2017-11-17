@@ -21,7 +21,7 @@ export default {
   },
   created () {
     window.storyblok.init({
-      accessToken: this.api_token
+      accessToken: this.$apiToken
     })
     window.storyblok.on('change', () => {
       this.getStory('draft')
@@ -51,14 +51,14 @@ export default {
       // get timestamp
       var timestampReqUrl = 'https://nl1rjqs0be.execute-api.us-east-1.amazonaws.com/prod/storybloks_api_request_version'
       return this.$http.get(timestampReqUrl).then(timestampResponse => {
-        this.api_version = timestampResponse.data
+        this.$apiTimestamp = timestampResponse.data
         // use timestamp when requesting data from CDN
         var reqUrl = 'https://api.storyblok.com/v1/cdn/stories/' + this.$route.params.slug
         return this.$http.get(reqUrl, {
           params: {
-            token: this.api_token,
+            token: this.$apiToken,
             env: process.env.NODE_ENV,
-            v: this.api_version
+            v: this.$apiTimestamp
           }
         }).then(apiResponse => {
           this.story = apiResponse.data.story

@@ -25,6 +25,8 @@ import CallToActionsDeck from '@/components/CallToActionsDeck'
 import CallToActionItem from '@/components/CallToActionItem'
 
 Vue.prototype.$http = axios
+Vue.prototype.$apiToken = 'b1Ucl4d8aQHRFtab6aczTgtt'
+Vue.prototype.$apiTimestamp = 0
 
 Vue.config.productionTip = false
 

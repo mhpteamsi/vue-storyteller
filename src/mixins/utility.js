@@ -1,10 +1,4 @@
 export default {
-  data () {
-    return {
-      api_token: 'b1Ucl4d8aQHRFtab6aczTgtt',
-      api_version: '12'
-    }
-  },
   methods: {
     resizeImage (image, option) {
       var imageService = '//img2.storyblok.com/'
@@ -15,9 +9,9 @@ export default {
       var reqUrl = 'https://api.storyblok.com/v1/cdn/stories/settings/global'
       return this.$http.get(reqUrl, {
         params: {
-          token: this.api_token,
+          token: this.$apiToken,
           env: process.env.NODE_ENV,
-          v: this.api_version
+          v: this.$apiTimestamp
         }
       }).then(response => {
         return response.data.story.content
@@ -28,9 +22,9 @@ export default {
       var reqUrl = 'https://api.storyblok.com/v1/cdn/links/' + id
       return this.$http.get(reqUrl, {
         params: {
-          token: this.api_token,
+          token: this.$apiToken,
           env: process.env.NODE_ENV,
-          v: this.api_version
+          v: this.$apiTimestamp
         }
       }).then(response => {
         return response.data.link.slug
@@ -43,7 +37,7 @@ export default {
           action: 'set'
         }
       }).then(response => {
-        this.api_version = response.data
+        this.$apiTimestamp = response.data
       })
     }
   }
