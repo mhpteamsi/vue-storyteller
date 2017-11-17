@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import Utility from '@/mixins/utility'
 
 export default {
@@ -51,11 +50,11 @@ export default {
     getCachedStory () {
       // get timestamp
       var timestampReqUrl = 'https://nl1rjqs0be.execute-api.us-east-1.amazonaws.com/prod/storybloks_api_request_version'
-      return axios.get(timestampReqUrl).then(timestampResponse => {
+      return this.$http.get(timestampReqUrl).then(timestampResponse => {
         this.api_version = timestampResponse.data
         // use timestamp when requesting data from CDN
         var reqUrl = 'https://api.storyblok.com/v1/cdn/stories/' + this.$route.params.slug
-        return axios.get(reqUrl, {
+        return this.$http.get(reqUrl, {
           params: {
             token: this.api_token,
             env: process.env.NODE_ENV,

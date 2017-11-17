@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 export default {
   data () {
     return {
@@ -15,7 +13,7 @@ export default {
     },
     getGlobalSettings () {
       var reqUrl = 'https://api.storyblok.com/v1/cdn/stories/settings/global'
-      return axios.get(reqUrl, {
+      return this.$http.get(reqUrl, {
         params: {
           token: this.api_token,
           env: process.env.NODE_ENV,
@@ -28,7 +26,7 @@ export default {
     // get the slug from the link id
     resolveLinkById (id) {
       var reqUrl = 'https://api.storyblok.com/v1/cdn/links/' + id
-      return axios.get(reqUrl, {
+      return this.$http.get(reqUrl, {
         params: {
           token: this.api_token,
           env: process.env.NODE_ENV,
@@ -40,7 +38,7 @@ export default {
     },
     clearCDNCache () {
       var reqUrl = 'https://nl1rjqs0be.execute-api.us-east-1.amazonaws.com/prod/storybloks_api_request_version'
-      return axios.get(reqUrl, {
+      return this.$http.get(reqUrl, {
         params: {
           action: 'set'
         }
