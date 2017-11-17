@@ -37,6 +37,16 @@ export default {
       }).then(response => {
         return response.data.link.slug
       })
+    },
+    clearCDNCache () {
+      var reqUrl = 'https://nl1rjqs0be.execute-api.us-east-1.amazonaws.com/prod/storybloks_api_request_version'
+      return axios.get(reqUrl, {
+        params: {
+          action: 'set'
+        }
+      }).then(response => {
+        this.api_version = response.data
+      })
     }
   }
 }

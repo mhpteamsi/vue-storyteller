@@ -5,8 +5,12 @@
 </template>
 
 <script>
+import axios from 'axios'
+import Utility from '@/mixins/utility'
+
 export default {
   name: 'Index',
+  mixins: [Utility],
   data () {
     return {
       story: {
@@ -18,16 +22,19 @@ export default {
   },
   created () {
     window.storyblok.init({
-      accessToken: 'b1Ucl4d8aQHRFtab6aczTgtt'
+      accessToken: this.api_token
     })
     window.storyblok.on('change', () => {
       this.getStory('draft')
+    })
+    window.storyblok.on('published', () => {
+      this.clearCDNCache()
     })
     window.storyblok.pingEditor(() => {
       if (window.storyblok.isInEditor()) {
         this.getStory('draft')
       } else {
-        this.getStory('published')
+        this.getCachedStory()
       }
     })
   },
@@ -36,11 +43,31 @@ export default {
       if (window.storyblok.isInEditor()) {
         this.getStory('draft')
       } else {
-        this.getStory('published')
+        this.getCachedStory()
       }
     }
   },
   methods: {
+    getCachedStory () {
+      // get timestamp
+      var timestampReqUrl = 'https://nl1rjqs0be.execute-api.us-east-1.amazonaws.com/prod/storybloks_api_request_version'
+      return axios.get(timestampReqUrl).then(timestampResponse => {
+        this.api_version = timestampResponse.data
+        // use timestamp when requesting data from CDN
+        var reqUrl = 'https://api.storyblok.com/v1/cdn/stories/' + this.$route.params.slug
+        return axios.get(reqUrl, {
+          params: {
+            token: this.api_token,
+            env: process.env.NODE_ENV,
+            v: this.api_version
+          }
+        }).then(apiResponse => {
+          this.story = apiResponse.data.story
+          document.title = apiResponse.data.story.content.seo_title ? apiResponse.data.story.content.seo_title : apiResponse.data.story.name
+          document.querySelector('meta[name="description"]').setAttribute('content', apiResponse.data.story.content.meta_description)
+        })
+      })
+    },
     getStory (version) {
       window.storyblok.get({
         slug: this.$route.params.slug,
@@ -53,10 +80,6 @@ export default {
         }
         this.$nextTick(() => {
           this.story = data.story
-
-          // set up SEO meta data.
-            // NOTE: you will probably need to use a prerenderer in order for search engines to pick this up.
-            // https://www.netlify.com/docs/prerendering/
           document.title = data.story.content.seo_title ? data.story.content.seo_title : data.story.name
           document.querySelector('meta[name="description"]').setAttribute('content', data.story.content.meta_description)
         })
