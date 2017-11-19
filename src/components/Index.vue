@@ -58,7 +58,7 @@ export default {
         return this.$http.get(reqUrl, {
           params: {
             token: process.env.API_TOKEN,
-            env: process.env.NODE_ENV,
+            env: process.env.API_ENV,
             v: this.$apiTimestamp
           }
         }).then(apiResponse => {
