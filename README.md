@@ -21,6 +21,8 @@ Vue.js makes this possible by binding the data source to dynamic components such
 
 ## Build Setup
 
+Before building, add your CMS API token to your config files: `config/dev.env.js`, etc.
+
 ``` bash
 # install dependencies
 npm install

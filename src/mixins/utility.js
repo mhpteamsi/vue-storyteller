@@ -9,7 +9,7 @@ export default {
       var reqUrl = 'https://api.storyblok.com/v1/cdn/stories/settings/global'
       return this.$http.get(reqUrl, {
         params: {
-          token: this.$apiToken,
+          token: process.env.API_TOKEN,
           env: process.env.NODE_ENV,
           v: this.$apiTimestamp
         }
@@ -22,7 +22,7 @@ export default {
       var reqUrl = 'https://api.storyblok.com/v1/cdn/links/' + id
       return this.$http.get(reqUrl, {
         params: {
-          token: this.$apiToken,
+          token: process.env.API_TOKEN,
           env: process.env.NODE_ENV,
           v: this.$apiTimestamp
         }
