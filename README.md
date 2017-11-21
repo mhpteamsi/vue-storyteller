@@ -6,7 +6,7 @@ This project is a work in progress, created for evaluating the feasibility of us
 
 Vue.js makes this possible by binding the data source to dynamic components such as grid elements, carousels, call-to-actions and other reusable "blocks".
 
-[Demo Site](https://teamsi-vuejs-starter.netlify.com/)
+[Demo Site](https://vue-storyteller.netlify.com/)
 
 ## Concepts
 - Simply create your schemas and data in the CMS, then code reusable Vue.js components in this project with props to match the schema.
