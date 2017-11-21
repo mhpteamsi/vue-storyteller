@@ -2,7 +2,7 @@
 > A Vue.js/Bootstrap 4 SPA boilerplate for Storyblok's headless CMS
 
 ## An experiment by Team SI's developers
-This project is a work in progress, created for evaluating the feasibility of using a decoupled, headless / API-first architecture at Team SI. The goal is for the content store (CMS) to define all layouts within the SPA, making a headless CMS a real possibility for marketing websites where quick content and layout changes are often needed.
+This project is a work in progress, created for evaluating the feasibility of using a decoupled, headless / API-first architecture at Team SI. The goal is for the content store (CMS) to declare all the layouts/components rendered by the SPA, making a headless CMS a real possibility for marketing websites where quick content and layout changes are often needed.
 
 Vue.js makes this possible by binding the data source to dynamic components such as grid elements, carousels, call-to-actions and other reusable "blocks".
 
