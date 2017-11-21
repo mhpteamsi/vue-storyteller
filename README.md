@@ -18,7 +18,7 @@ Vue.js makes this possible by binding the data source to dynamic components such
 - CI/CD support: we add the `DEPLOY_PRIME_URL` environment variable value to API requests as the `env` parameter to eliminate CORS issues that could arise from accessing the API from multiple environments. Works great with [Netlify Deploy Previews](https://www.netlify.com/docs/continuous-deployment/)!
 - Multi-site ready: just add each space's token to an `API_TOKEN` environment variable.
 - Dynamic navigation support, allowing the data store to define a custom navbar - or even a mega menu.
-- Several reusable content blocks - grid row and columns, hero component, call-to-actions, markdown, and images.
+- Several reusable content blocks. So far we have support for grid rows and columns, hero components, call-to-actions, markdown, images, and Youtube videos.
 - Reusable page templates.
 - Automatic lazy loading and in-place image optimization on image components via StoryBlok's [Image Service](https://www.storyblok.com/docs/image-service) (just specify the width and/or height on each component instance).
 
