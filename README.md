@@ -1,4 +1,4 @@
-# Storyblok Vue.js/Bootstrap 4 Starter Template
+# vue-storyteller
 > A Vue.js/Bootstrap 4 SPA boilerplate for Storyblok's headless CMS
 
 ## An experiment by Team SI's developers
