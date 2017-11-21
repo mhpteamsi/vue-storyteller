@@ -19,6 +19,7 @@ import Row from '@/components/layout/grid/Row'
 import Column from '@/components/layout/grid/Column'
 import Markdown from '@/components/Markdown'
 import ImageBlock from '@/components/ImageBlock'
+import YoutubeVideo from '@/components/YoutubeVideo'
 import Teaser from '@/components/Teaser'
 import Hero from '@/components/Hero'
 import CallToActionsDeck from '@/components/CallToActionsDeck'
@@ -39,6 +40,7 @@ Vue.component('grid-row', Row)
 Vue.component('grid-column', Column)
 Vue.component('markdown', Markdown)
 Vue.component('image-block', ImageBlock)
+Vue.component('youtube-video', YoutubeVideo)
 Vue.component('navbar', Navbar)
 Vue.component('nav-group', NavGroup)
 Vue.component('nav-link', NavLink)
