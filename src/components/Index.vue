@@ -27,9 +27,6 @@ export default {
     window.storyblok.on('change', () => {
       this.getStory('draft')
     })
-    window.storyblok.on('published', () => {
-      this.clearCDNCache()
-    })
     window.storyblok.pingEditor(() => {
       if (window.storyblok.isInEditor()) {
         this.getStory('draft')
@@ -49,17 +46,21 @@ export default {
   },
   methods: {
     getCachedStory () {
-      // get timestamp
-      var timestampReqUrl = 'https://nl1rjqs0be.execute-api.us-east-1.amazonaws.com/prod/storybloks_api_request_version'
-      return this.$http.get(timestampReqUrl).then(timestampResponse => {
-        Vue.prototype.$apiTimestamp = timestampResponse.data
-        // use timestamp when requesting data from CDN
+      // get timestamp first so we can request a version that may already be cached in the CDN
+      var timestampReqUrl = 'https://api.storyblok.com/v1/cdn/spaces/me'
+      return this.$http.get(timestampReqUrl, {
+        params: {
+          token: process.env.API_TOKEN,
+          v: Date.now()
+        }
+      }).then(timestampResponse => {
+        Vue.prototype.$apiTimestamp = timestampResponse.data.space.version
         var reqUrl = 'https://api.storyblok.com/v1/cdn/stories/' + this.$route.params.slug
         return this.$http.get(reqUrl, {
           params: {
             token: process.env.API_TOKEN,
             env: process.env.DEPLOY_PRIME_URL,
-            v: this.$apiTimestamp
+            cv: this.$apiTimestamp
           }
         }).then(apiResponse => {
           this.story = apiResponse.data.story
