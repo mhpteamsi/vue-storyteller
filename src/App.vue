@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view :key="this.$route.params.slug"></router-view>
   </div>
 </template>
 

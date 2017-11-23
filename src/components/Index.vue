@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <transition name="fade">
     <component :blok="story.content" :is="story.content.layout"></component>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -89,7 +89,11 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0
+  }
 </style>
