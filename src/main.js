@@ -10,6 +10,7 @@ import VueLazyload from 'vue-lazyload'
 import LayoutHome from '@/components/layout/LayoutHome'
 import LayoutDefault from '@/components/layout/LayoutDefault'
 import LayoutBlank from '@/components/layout/LayoutBlank'
+import NotFound from '@/components/NotFound'
 import Navbar from '@/components/layout/partials/Navbar'
 import NavGroup from '@/components/layout/partials/NavGroup'
 import NavLink from '@/components/layout/partials/NavLink'
@@ -36,6 +37,7 @@ Vue.use(VueLazyload)
 Vue.component('layout-home', LayoutHome)
 Vue.component('layout-default', LayoutDefault)
 Vue.component('layout-blank', LayoutBlank)
+Vue.component('page-not-found', NotFound)
 Vue.component('grid-row', Row)
 Vue.component('grid-column', Column)
 Vue.component('markdown', Markdown)

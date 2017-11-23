@@ -65,6 +65,8 @@ export default {
           this.story = apiResponse.data.story
           document.title = apiResponse.data.story.content.seo_title ? apiResponse.data.story.content.seo_title : apiResponse.data.story.name
           document.querySelector('meta[name="description"]').setAttribute('content', apiResponse.data.story.content.meta_description)
+        }).catch(() => {
+          this.$router.push('/page-not-found')
         })
       })
     },
