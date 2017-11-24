@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     getCachedStory () {
-      // get timestamp
+      // get timestamp from Lambda function
       var timestampReqUrl = 'https://nl1rjqs0be.execute-api.us-east-1.amazonaws.com/prod/storybloks_api_request_version'
       return this.$http.get(timestampReqUrl).then(timestampResponse => {
         Vue.prototype.$apiTimestamp = timestampResponse.data
@@ -66,7 +66,7 @@ export default {
           document.title = apiResponse.data.story.content.seo_title ? apiResponse.data.story.content.seo_title : apiResponse.data.story.name
           document.querySelector('meta[name="description"]').setAttribute('content', apiResponse.data.story.content.meta_description)
         }).catch(() => {
-          this.$router.push('/page-not-found')
+          this.$router.replace('/page-not-found')
         })
       })
     },
